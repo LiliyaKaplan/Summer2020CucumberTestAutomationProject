@@ -35,7 +35,7 @@ Feature: As user I want to be able to login under different roles
   @s_o @with_two_columns
   Scenario Outline: Parametrized login as <role>
     When user logs in as a "<role>"
-    Then user should see "dashboard" page
+    Then user should see "<page_title>" page
 
     Examples:
       | role          | page_title      |
