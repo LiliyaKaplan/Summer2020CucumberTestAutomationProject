@@ -7,6 +7,7 @@ Feature: As user I want to be able to login under different roles
   Background: common steps
     Given user is on the login page
 
+  @smoke
   Scenario: Login as a sales manager
     When user logs in
     Then user should see dashboard page
@@ -43,7 +44,7 @@ Feature: As user I want to be able to login under different roles
       | store manager | Dashboard       |
       | driver        | Quick Launchpad |
 
-  @negative_login
+  @negative_login @smoke
   Scenario: Invalid password
     When user logs in with "storemanager85" username and "wrong" password
     Then user verifies that "Invalid user name or password." message is displayed
